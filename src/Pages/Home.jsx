@@ -1,18 +1,22 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import HeroSection from "../CompClass/HeroSection";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const [categories,SetCategories] = useState([]);
+    const [categories,setCategories] = useState([]);
 
     useEffect(()=>{
-
+fetchCategories();
     },[]);
 
     const fetchCategories = async ()=>{
         const {data} = await axios("https://www.themealdb.com/api/json/v1/1/categories.php");
-        SetCategories(data.categories);
+        setCategories(data.categories);
     };
   return (
+    <>
+    <HeroSection />
     <div className="container mt-5">
       <h3 className="text-center mb-4">CATEGORIES</h3>
 
@@ -35,6 +39,7 @@ const Home = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

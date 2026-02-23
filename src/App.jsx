@@ -1,21 +1,15 @@
-import { Routes } from 'react-router-dom'
 import './App.css'
 import Header from './CompClass.jsx/Header'
-import Home from './Pages/Home'
-import SearchForm from './Pages/SearchForm'
-import CategoryMeals from './Pages/CategoryMeals'
+import Routings from './Routes/Routings'
 
 function App() {
 
   return (
    <>
    <Header />
-<Home />
-<SearchForm />
-<CategoryMeals />
-<Routes />
+  <Routings />
    </>
-  )
+  );
 }
 
 export default App

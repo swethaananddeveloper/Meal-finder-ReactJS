@@ -16,12 +16,11 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="container mt-4">
-      <form onSubmit={handleSubmit} className="d-flex mb-4">
+    <div className="container mt-5">
+      <form onSubmit={handleSubmit} className="d-flex justify-content-center mb-4">
         <input
           type="text"
-          className="form-control me-2"
-          placeholder="Search recipes..."
+          className="form-control w-50 me-2"
           value={foodName}
           onChange={(e) => setFoodName(e.target.value)}
         />
@@ -43,7 +42,10 @@ const SearchForm = () => {
             </div>
           </div>
         ))}
+
+         
       </div>
+       
     </div>
   );
 };

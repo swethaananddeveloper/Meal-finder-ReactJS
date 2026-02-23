@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const CategoryMeals = () => {
     const {name} = useParams();
@@ -15,8 +15,8 @@ fetchMeals();
     setMeals(data.meals);
     };
  return (
-    <div className="container mt-5">
-      <h3 className="text-center mb-4">{name} Meals</h3>
+    <div className="container mt-5" pt-5>
+    <h3 className="text-center mb-4">{name} Meals</h3>
 
       <div className="row">
         {meals?.map((meal) => (
