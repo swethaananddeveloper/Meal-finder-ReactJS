@@ -1,28 +1,58 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const CategoryMeals = () => {
-    const {name} = useParams();
-    const [meals, setMeals] = useState([]);
+  const { name } = useParams();
 
-    useEffect(()=>{
-fetchMeals();
-    },[name]);
+  const [meals, setMeals] = useState([]);
+  const [categoryInfo, setCategoryInfo] = useState(null);
 
-    const fetchMeals = async()=>{
-        const {data} = await axios(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`)
+  useEffect(() => {
+    fetchMeals();
+    fetchCategoryDetails();
+  }, [name]);
+
+  const fetchMeals = async () => {
+    const { data } = await axios(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`
+    );
     setMeals(data.meals);
-    };
- return (
-    <div className="container mt-5" pt-5>
-    <h3 className="text-center mb-4">{name} Meals</h3>
+  };
 
-      <div className="row">
+  const fetchCategoryDetails = async () => {
+    const { data } = await axios(
+      "https://www.themealdb.com/api/json/v1/1/categories.php"
+    );
+
+    const selectedCategory = data.categories.find(
+      (cat) => cat.strCategory.toLowerCase() === name.toLowerCase()
+    );
+
+    setCategoryInfo(selectedCategory);
+  };
+
+  return (
+    <div className="container mt-5 pt-5">
+      <h3 className="text-center mb-4 text-capitalize">
+        {name} Meals
+      </h3>
+
+      {/* ✅ Dynamic Description */}
+      {categoryInfo && (
+        <div className="card p-4 mt-4">
+          <h3 className="text-success">
+            {categoryInfo.strCategory}
+          </h3>
+          <p>{categoryInfo.strCategoryDescription}</p>
+        </div>
+      )}
+
+      <div className="row mt-4">
         {meals?.map((meal) => (
           <div className="col-md-3 mb-4" key={meal.idMeal}>
             <Link to={`/meal/${meal.idMeal}`}>
-              <div className="card">
+              <div className="card h-100">
                 <img
                   src={meal.strMealThumb}
                   className="card-img-top"
