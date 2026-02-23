@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import HeroSection from "../CompClass/HeroSection";
 import { Link } from 'react-router-dom';
+import SearchForm from './SearchForm';
 
 const Home = () => {
     const [categories,setCategories] = useState([]);
@@ -16,7 +16,7 @@ fetchCategories();
     };
   return (
     <>
-    <HeroSection />
+<SearchForm />
     <div className="container mt-5">
       <h3 className="text-center mb-4">CATEGORIES</h3>
 

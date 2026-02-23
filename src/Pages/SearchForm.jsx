@@ -26,7 +26,9 @@ const SearchForm = () => {
         />
         <button className="btn btn-warning">Search</button>
       </form>
-
+ <h2>What are your favorite cuisines?</h2>
+       <p>PERSONALIZE YOUR EXPERIENCE</p>
+   
       <div className="row">
         {results?.map((meal) => (
           <div className="col-md-3 mb-4" key={meal.idMeal}>
@@ -42,7 +44,7 @@ const SearchForm = () => {
             </div>
           </div>
         ))}
-
+   
          
       </div>
        

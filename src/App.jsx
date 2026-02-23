@@ -1,12 +1,13 @@
 import './App.css'
 import Header from './CompClass.jsx/Header'
-import Routings from './Routes/Routings'
+import Home from './Pages/Home';
+import Routings from './Routes/Routings';
 
 function App() {
 
   return (
    <>
-   <Header />
+  <Header />
   <Routings />
    </>
   );
