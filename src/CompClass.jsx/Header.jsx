@@ -50,91 +50,75 @@ const Header = () => {
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Beef</Link>
+                <Link to="/Category/Beef" className="nav-link text-dark">Beef</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Chicken</Link>
+                <Link to="/Category/Chicken" className="nav-link text-dark">Chicken</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Dessert</Link>
+                <Link to="/Category/Dessert" className="nav-link text-dark">Dessert</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Lamb</Link>
+                <Link to="/Category/Lamb" className="nav-link text-dark">Lamb</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Miscellaneous</Link>
+                <Link to="/Category/Miscellaneous" className="nav-link text-dark">Miscellaneous</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Pasta</Link>
+                <Link to="/Category/Pasta" className="nav-link text-dark">Pasta</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Pork</Link>
+                <Link to="/Category/Pork" className="nav-link text-dark">Pork</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Seafood</Link>
+                <Link to="/Category/Seafood" className="nav-link text-dark">Seafood</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Side</Link>
+                <Link to="/Category/Side" className="nav-link text-dark">Side</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Starter</Link>
+                <Link to="/Category/Starter" className="nav-link text-dark">Starter</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Vegan</Link>
+                <Link to="/Category/Vegan" className="nav-link text-dark">Vegan</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Vegetarian</Link>
+                <Link to="/Category/Vegetarian" className="nav-link text-dark">Vegetarian</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Breakfast</Link>
+                <Link to="/Category/Breakfast" className="nav-link text-dark">Breakfast</Link>
                 <hr className="nav m-1"/>
               </li>
 
               <li className="nav-item text-start">
-                <Link to="#" className="nav-link text-dark">Goat</Link>
+                <Link to="/Category/Goat" className="nav-link text-dark">Goat</Link>
               </li>
 
             </ul>
-
-            <form className="d-flex mt-3" role="search">
-              <input 
-                className="form-control me-2" 
-                type="search" 
-                placeholder="Search" 
-                aria-label="Search"
-              />
-              <button 
-                className="btn btn-outline-dark" 
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
-
           </div>
         </div>
       </div>
