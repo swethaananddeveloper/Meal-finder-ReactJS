@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { MdArrowOutward } from "react-icons/md";
+
 
 const MealDetails = () => {
   const { id } = useParams();
@@ -17,7 +19,6 @@ const MealDetails = () => {
     setMeal(data.meals[0]);
   };
 
-  // 🔥 Get Ingredients + Measures Dynamically
   const getIngredients = () => {
     let items = [];
     for (let i = 1; i <= 20; i++) {
@@ -36,18 +37,16 @@ const MealDetails = () => {
 
   const ingredients = getIngredients();
 
-  // Split measures into 2 columns
+
   const half = Math.ceil(ingredients.length / 2);
   const leftMeasures = ingredients.slice(0, half);
   const rightMeasures = ingredients.slice(half);
 
-  // Split instructions into steps
   const instructions = meal.strInstructions.split(".");
 
   return (
     <div className="container mt-5 pt-5">
 
-      {/* Title */}
       <h2 className="mb-4">{meal.strMeal}</h2>
 
       <div className="row">
@@ -70,6 +69,9 @@ const MealDetails = () => {
 
           <p>
             <strong>CATEGORY:</strong> {meal.strCategory}
+          </p>
+          <p>
+            <strong>Tag:</strong> {meal.strTag}
           </p>
 
           {meal.strSource && (
@@ -103,7 +105,9 @@ const MealDetails = () => {
 
             <div className="row">
               {ingredients.map((item, index) => (
-                <div className="col-6 mb-2" key={index}>
+                <div  key={index}
+                className=" col-6 mb-2 d-flex align-items-center mb-2"
+                >
                   <span className="badge bg-info me-2">
                     {index + 1}
                   </span>
@@ -122,26 +126,29 @@ const MealDetails = () => {
         <div className="row border p-3 bg-light">
           <div className="col-md-6">
             {leftMeasures.map((item, index) => (
-              <p key={index}>🔸 {item.measure}</p>
+              <p key={index} className="d-flex align-items-center mb-2"> 
+              <MdArrowOutward style={{ color: "#f4511e" }}/>
+{item.measure}</p>
             ))}
           </div>
 
           <div className="col-md-6">
             {rightMeasures.map((item, index) => (
-              <p key={index}>🔸 {item.measure}</p>
+              <p key={index} className="d-flex align-items-center mb-2">
+                <MdArrowOutward style={{ color: "#f4511e" }}/>
+ {item.measure}</p>
             ))}
           </div>
         </div>
       </div>
 
-      {/* INSTRUCTIONS */}
       <div className="mt-5">
         <h5>Instructions:</h5>
 
         {instructions.map(
           (step, index) =>
             step.trim() && (
-              <div key={index} className="mb-2">
+              <div key={index}  className=" mb-2 d-flex align-items-center mb-2">
                 <input
                   type="checkbox"
                   className="form-check-input me-2"
@@ -151,8 +158,11 @@ const MealDetails = () => {
               </div>
             )
         )}
+
       </div>
-    </div>
+      
+          </div>
+          
   );
 };
 
