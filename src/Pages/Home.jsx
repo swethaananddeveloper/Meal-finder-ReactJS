@@ -16,7 +16,7 @@ fetchCategories();
     };
   return (
     <>
-<SearchForm />
+    <SearchForm />
     <div className="container mt-5">
       <h3 className="text-center mb-4">CATEGORIES</h3>
 

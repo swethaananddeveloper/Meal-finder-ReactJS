@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { MdArrowOutward } from "react-icons/md";
+import Home from "./Home";
 
 
 const MealDetails = () => {
@@ -160,8 +161,12 @@ const MealDetails = () => {
         )}
 
       </div>
+      <div className="mt-5">
+  <Home />
+</div>
       
           </div>
+          
           
   );
 };
