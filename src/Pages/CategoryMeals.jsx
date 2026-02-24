@@ -38,7 +38,6 @@ const CategoryMeals = () => {
         {name} Meals
       </h3>
 
-      {/* ✅ Dynamic Description */}
       {categoryInfo && (
         <div className="card p-4 mt-4">
           <h3 className="text-success">
