@@ -75,20 +75,15 @@ const MealDetails = () => {
             <strong>Tag:</strong> {meal.strTag}
           </p>
 
-          {meal.strSource && (
-            <p>
-              <strong>Source:</strong>{" "}
-              <a href={meal.strSource} target="_blank" rel="noreferrer">
-                {meal.strSource}
-              </a>
-            </p>
-          )}
+
 
           {meal.strTags && (
             <p>
               <strong>Tags:</strong>{" "}
               <span className="badge bg-warning text-dark">
-                {meal.strTags}
+                <a href= {meal.strTags} target="_blank" rel="noreferrer">
+                 {meal.strTags}
+               </a>
               </span>
             </p>
           )}
